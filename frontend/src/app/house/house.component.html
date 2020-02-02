@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="container pt-5 pb-4">
+    <div *ngIf="response" class="row">
+        <div class="col-md-5 pb-5">
+            <img src="{{ response.images[0] }}" width="100%" class="pb-3 rounded">
+            <img src="{{ response.images[1] }}" width="50%" class="pr-2 rounded">
+            <img src="{{ response.images[2] }}" width="50%" class="pl-2 rounded">
+        </div>
+        <div class="col-md-7">
+            <h3> {{ response.title }} </h3>
+            <br>
+            <p><b>Description:&nbsp;</b> {{ response.description }} </p>
+            <br>
+            <p><b>Rent:&nbsp; Rs.</b> {{ response.rent }}/Month</p>
+            <br>
+            <p><b>Address:&nbsp;</b> {{ response.address }} </p>
+            <br>
+            <button class="btn btn-success" (click)="contact(content)">Contact owner</button>
+            &nbsp; &nbsp;
+            <button class="btn btn-secondary" routerLink="/home">Not Interested</button>
+        </div>
+    </div>
+
+    <div *ngIf="!response">
+        {{ message }}
+    </div>
+
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Contact details</h4>
+    </div>
+    <div class="modal-body">
+        <p class="pt-3"><b>Name:&nbsp;</b> {{ response.name }} </p>
+        <p><b>Email:&nbsp;</b> {{ response.email }} </p>
+        <p><b>Mobile:&nbsp;</b> {{ response.mobile }} </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="c('Save click')">Done</button>
+    </div>
+</ng-template>

@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-12">
+            <h3 class="pb-3 text-center">Add New House</h3>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label for="exampleInputTitle1">House Title</label>
+                <input [(ngModel)]="title" type="text" class="form-control" id="exampleInputTitle1">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea [(ngModel)]="description" class="form-control" id="exampleFormControlTextarea1"
+                    rows="6"></textarea>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label for="exampleInputRent">Rent per month (in Rupees)</label>
+                <input [(ngModel)]="rent" type="text" class="form-control" id="exampleInputRent">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlAddr">Address</label>
+                <textarea [(ngModel)]="address" class="form-control" id="exampleFormControlAddr" rows="3"></textarea>
+            </div>
+
+            <label>Upload 3 images (mandatory): </label><br>
+            <input style="display: none" type="file" accept="image/*" (change)="onFileChanged1($event)" #fileInput1>
+            <button class="btn btn-secondary mb-2" (click)="fileInput1.click()">Image 1 <span
+                    *ngIf="image1">&#10003;</span></button>
+            &nbsp;
+            <input style="display: none" type="file" accept="image/*" (change)="onFileChanged2($event)" #fileInput2>
+            <button class="btn btn-secondary mb-2" (click)="fileInput2.click()">Image 2 <span
+                    *ngIf="image2">&#10003;</span></button>
+            &nbsp;
+            <input style="display: none" type="file" accept="image/*" (change)="onFileChanged3($event)" #fileInput3>
+            <button class="btn btn-secondary mb-2" (click)="fileInput3.click()">Image 3 <span
+                    *ngIf="image3">&#10003;</span></button>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row pt-4 pb-4">
+        <div class="col-12">
+            <div class="text-center">
+                <button class="btn btn-success" (click)="add()">Submit</button>
+                &nbsp; &nbsp;
+                <button class="btn btn-secondary" routerLink="/home">Cancel</button>
+                <br>
+                <small *ngIf="errorMessage" class="form-text text-danger pt-3">{{ errorMessage }}</small>
+                <small *ngIf="uploading" class="form-text text-primary pt-3">Please wait, uploading... </small>
+            </div>
+        </div>
+    </div>
+</div>

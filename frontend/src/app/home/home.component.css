@@ -1,0 +1,8 @@
+.home-box {
+    border-radius: 5px;
+    background-color: rgb(235, 235, 235);
+}
+
+.home-box:hover {
+    background-color: rgb(240, 240, 240);
+}

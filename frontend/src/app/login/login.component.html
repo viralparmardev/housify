@@ -1,0 +1,51 @@
+<div class="bg-success text-center pt-3 pb-3">
+    <h1 class="text-white">Housify</h1>
+</div>
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-1 col-sm-2 col-md-4"></div>
+        <div class="col-10 col-sm-8 col-md-4 login-box pt-3 pb-4">
+            <h3 class="pb-3 text-center">Sign in to continue</h3>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1">
+                <small class="form-text text-muted">We won't spam or share your email.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input [(ngModel)]="password" type="password" class="form-control" id="exampleInputPassword1"
+                    (keyup.enter)="login()">
+            </div>
+            <div *ngIf="registerMode" class="form-group">
+                <label for="exampleInputName">Full name</label>
+                <input [(ngModel)]="name" type="text" class="form-control" id="exampleInputName">
+            </div>
+            <div *ngIf="registerMode" class="form-group">
+                <label for="exampleInputMob1">Mobile</label>
+                <input [(ngModel)]='mobile' type="text" class="form-control" id="exampleInputMob1">
+            </div>
+            <div *ngIf="registerMode" class="form-group">
+                <label for="exampleInputPassword2">Repeat password</label>
+                <input [(ngModel)]="repeat" type="password" class="form-control" id="exampleInputPassword2"
+                    (keyup.enter)="register()">
+            </div>
+
+            <small *ngIf="failed" class="form-text text-danger pb-3">{{ errorMessage }}</small>
+            <small *ngIf="successful" class="form-text text-success pb-3">{{ successMessage }}</small>
+
+            <div *ngIf="!registerMode" class="text-center">
+                <button class="btn btn-success" (click)="login()">Login</button>
+                &nbsp; &nbsp;
+                <button class="btn btn-secondary" (click)="registerMode=true">Register</button>
+            </div>
+            <div *ngIf="registerMode" class="text-center">
+                <button class="btn btn-secondary" (click)="registerMode=false">Login</button>
+                &nbsp; &nbsp;
+                <button class="btn btn-success" (click)="register()">Register</button>
+            </div>
+
+        </div>
+        <div class="col-1 col-sm-2 col-md-4"></div>
+    </div>
+</div>
