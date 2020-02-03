@@ -38,21 +38,35 @@ The project has been deployed using Amazon Web Services - AWS EC2 instance with 
 The MySQL database has the following tables:
 
  1. user
+ 
   `user_id` int(10) NOT NULL,
+  
   `name` varchar(50) NOT NULL,
+  
   `email` varchar(50) NOT NULL,
+  
   `mobile` varchar(10) NOT NULL,
+  
   `password` varchar(50) NOT NULL,
+  
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
  
  2. house
+ 
   `house_id` int(10) NOT NULL,
+  
   `user_id` int(10) NOT NULL,
+  
   `title` varchar(100) NOT NULL,
+  
   `description` varchar(1000) NOT NULL,
+  
   `rent` int(10) NOT NULL,
+  
   `address` varchar(200) NOT NULL,
+  
   `images` json NOT NULL,
+  
   `date_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
 
