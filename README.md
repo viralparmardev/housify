@@ -2,9 +2,7 @@
 
 Housify is a housing management system, wherein users can login/register with their credentials, add their houses for lease and view houses listed by other users.
 
-**Live URL**: [http://ec2-3-89-251-159.compute-1.amazonaws.com/](http://ec2-3-89-251-159.compute-1.amazonaws.com/)
-
-The project has been deployed using Amazon Web Services - AWS EC2 instance with custom MySQL, Apache and Gunicorn installations for serving the application.
+The project had been deployed using Amazon Web Services - AWS EC2 instance with custom MySQL, Apache and Gunicorn installations for serving the application.
 
 # Tech stack
 
